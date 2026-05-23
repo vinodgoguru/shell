@@ -11,3 +11,5 @@ echo "Sum of two numbers: $SUM"
 MOVIES=("RRR" "VARANASI" "PUSHPA")
 
 echo "Movies are : ${MOVIES[@]}"
+echo "First Movie : ${MOVIES[0]}"
+echo "Second Move : ${MOVIES[1]}"
