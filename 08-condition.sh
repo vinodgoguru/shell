@@ -9,9 +9,9 @@ NUMBER=$1
 # ge - greater than or equal
 # le - less than or equal
 
-if [ $NUMBER -ge 20 ]; then
+if [ $NUMBER -gt 20 ]; then
     echo "Given number $NUMBER is greater than 20"
-elif [ $NUMBER -gt 20 ]; then
+elif [ $NUMBER -ge 20 ]; then
     echo "Given number $NUMBER is equal to 20"  
 else
     echo "Give number $NUMBER is less than 20"      
