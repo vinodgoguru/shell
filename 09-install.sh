@@ -40,7 +40,7 @@ if [ $? -eq 0 ]; then
     echo "Ngix is already installed.. SKIPPING"
 else
     echo "Installing Nginx"
-    dng install ngix -y
+    dnf install nginx -y
     VALIDATE nginx $1
 fi
 
