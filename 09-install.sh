@@ -9,6 +9,18 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+# First arg --> what are you trying to install
+# Second arg --> exit code
+
+VALIDATE(){
+    if [ $? -ne 0 ]; then
+        echo " Installing $1 is ...failed "
+    else
+        echo " Installing $1 is .. Success"
+    fi
+
+}
+
 # echo "I am continuning "
 
 dnf list installed mysql
@@ -18,12 +30,19 @@ if [ $? -eq 0 ]; then
 else  
     echo "Installing MYSQL"
     dnf install mysql -y
+    VALIDATE mysql $?
 
-    if [ $? -ne 0 ]; then
-        echo " Installing MYSQL is ...failed "
-    else
-        echo " Installing MYSQL is .. Success"
-    fi
 fi
+
+dnf installed ngix
+
+if [ $? -eq 0 ]; then
+    echo "Ngix is already installed.. SKIPPING"
+else
+    echo "Installing Nginx"
+    dng install ngix -y
+    VALIDATE nginx $1
+fi
+
 
 
