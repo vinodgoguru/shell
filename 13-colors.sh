@@ -36,7 +36,7 @@ do
         dnf install $package -y &>> $LOGS_FILE
         VALIDATE "$package" $?
     else
-        echo "$TIME_STAMP $package already installed ... %Y SKIPPING %N "
+        echo "$TIME_STAMP $package already installed ... $Y SKIPPING %$ "
     fi
 done
 
