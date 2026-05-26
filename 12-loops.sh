@@ -29,7 +29,7 @@ do
     dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> $LOGS_FILE
-        VALIDATE "Installing $package " $?
+        VALIDATE "$package" $?
     else
         echo "$package already installed ... SKIPPING "
     fi
